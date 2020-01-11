@@ -1,4 +1,4 @@
-package com.jenu.lbdsa.week1.warmup1;
+package com.jenu.lbdsa.t1.warmup1;
 
 import java.util.Arrays;
 
