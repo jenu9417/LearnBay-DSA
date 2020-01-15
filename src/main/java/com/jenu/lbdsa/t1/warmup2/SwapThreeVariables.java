@@ -1,5 +1,27 @@
 package com.jenu.lbdsa.t1.warmup2;
 
+/*
+
+XOR Operations
+
+Exclusive OR. True when only one of the inputs is true.
+
+-------------
+A | B  |  R |
+-------------
+0 | 0  |  0 |
+0 | 1  |  1 |
+1 | 0  |  1 |
+1 | 1  |  1 |
+-------------
+
+
+A ^ A = 0
+A ^ 0 = A
+0 ^ 0 = 0
+
+*/
+
 public class SwapThreeVariables {
 	
 	static void swap(int a, int b, int c) {
