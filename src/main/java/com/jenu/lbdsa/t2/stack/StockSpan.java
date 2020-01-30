@@ -23,8 +23,8 @@ a) Brute-Force
 	Time : O(n)
 	
 b) Stack-Based
-   Basically we will iterate through the array of stocks and we will store the index of the last 
-   greater element always in the stack. Hence, if the stack is empty than span is length of elements
+   Basically we will iterate through the array of stocks and we will store the indices of greater elements
+   till then in the stack. Hence, if the stack is empty than span is length of elements
    parsed till then. If stack has some elements, then diff in index between current and last greater 
    element.
 
@@ -35,7 +35,7 @@ public class StockSpan {
 	static int[] stockSpan(int[] stocks) {
 		final int[] span = new int[stocks.length];
 		final Stack<Integer> indexStack = new Stack<>();
-		indexStack.push(1);
+		//indexStack.push(1);
 		
 		for(int i=0; i<stocks.length; i++) {
 			// pop the indices of lesser elements from the stack
