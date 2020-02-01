@@ -41,7 +41,7 @@ public class TrappingRainWater {
 		int totalWater = 0;
 		int maxTillNow = 0;
 		for(int i=0;i<height.length;i++) {
-			if(stack.isEmpty() || height[i] < height[stack.peek()]) {
+			if(stack.isEmpty() || height[i] < maxTillNow) {
 				stack.push(i);
 				maxTillNow = Math.max(maxTillNow, height[i]);
 				continue;
@@ -55,7 +55,19 @@ public class TrappingRainWater {
 			}
 			
 			stack.push(i);
-			maxTillNow = Math.max(maxTillNow, height[i]);
+			maxTillNow = height[i];
+		}
+		
+		int rightMax = height[stack.pop()];
+		
+		while(!stack.isEmpty()) {
+			int rightBound = rightMax;
+			int current = height[stack.pop()];
+			int leftBound = maxTillNow;
+			if(current <= rightBound) {
+				totalWater += Math.min(leftBound, rightBound) - current;
+			}
+			rightMax = Math.max(current, rightMax);
 		}
 		
 		return totalWater;
