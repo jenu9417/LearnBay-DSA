@@ -1,4 +1,4 @@
-package com.jenu.lbdsa.t5.tree;
+package com.jenu.lbdsa.t6.tree;
 
 public class BinarySearchTree {
 
