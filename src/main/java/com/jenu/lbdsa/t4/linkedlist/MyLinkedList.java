@@ -14,6 +14,10 @@ public class MyLinkedList {
 		return head;
 	}
 	
+	public void setHead(Node head) {
+		this.head = head;
+	}
+	
 	public int getSize() {
 		return size;
 	}
@@ -205,7 +209,7 @@ public class MyLinkedList {
 		System.out.println("LinkedList Current Size : " + linkedList.getSize());
 	}
 
-	static class Node {
+	public static class Node {
 		Integer data;
 		Node next;
 		
