@@ -232,6 +232,10 @@ public class Heap {
 		int min = heap.findMin();
 		System.out.printf("Min : %d\n", min);
 		
+		System.out.println("\nFind Max");
+		int max = heap.findMax();
+		System.out.printf("Max : %d\n", max);
+		
 		System.out.println("\nDelete 7");
 		boolean deleted = heap.delete(7);
 		System.out.printf("Deleted : %b\n", deleted);
@@ -245,6 +249,10 @@ public class Heap {
 		System.out.println("\nFind Min");
 		min = heap.findMin();
 		System.out.printf("Min : %d\n", min);
+		
+		System.out.println("\nFind Max");
+		max = heap.findMax();
+		System.out.printf("Max : %d\n", max);
 	}
 
 }
