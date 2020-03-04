@@ -53,6 +53,116 @@ public class BinarySearchTree {
 		}
 	}
 	
+	public void insertIterative(int data, Node current, Node parent) {
+		if(root == null) {
+			root = new Node(data);
+			return;
+		}
+		
+		while(current != null) {
+			if(data <= current.data) {
+				parent = current;
+				current = current.left;
+			} else {
+				parent = current;
+				current = current.right;
+			}
+		}
+		
+		if(current == null) {
+			if(data <= parent.data) {
+				parent.left = new Node(data);
+			} else {
+				parent.right = new Node(data);
+			}
+		}
+	}
+	
+	public Node findRecursive(int data, Node current) {
+		if(current != null && current.data != data) {
+			if(data <= current.data) {
+				current = findRecursive(data, current.left);
+			} else {
+				current = findRecursive(data, current.right);
+			}
+		}
+			
+		return current;
+	}
+	
+	public Node findIterative(int data, Node current) {
+		while(current != null && current.data != data) {
+			if(data <= current.data) {
+				current = current.left;
+			} else {
+				current = current.right;
+			}
+		}
+		
+		return current;
+	}
+	
+	public Node findPreviousRecursive(int data, Node current, Node parent) {
+		if(current != null && current.data != data) {
+			if(data <= current.data) {
+				parent = findPreviousRecursive(data, current.left, current);
+			} else {
+				parent = findPreviousRecursive(data, current.right, current);
+			}
+		}
+			
+		return parent;
+	}
+	
+	public boolean deleteIterative(int data) {
+		final Node previousNode = findPreviousRecursive(data, this.root, null);
+		if(previousNode == null) {
+			return false;
+		}
+		
+		if(previousNode.left.data == data) {
+			Node node = previousNode.left;
+			if(node.hasLeft() && node.hasRight()) {
+				Node parent = node.left;
+				Node successor = parent.right;
+				if(successor == null) {
+					previousNode.left = node.left;
+				}
+				while(successor.hasRight()) {
+					parent = successor;
+					successor = successor.right;
+				}
+				parent.right = successor.left;
+				previousNode.left = successor;
+			} else if(node.hasLeft()) {
+				previousNode.left = node.left;
+			} else {
+				previousNode.left = node.right;
+			}
+		} else {
+			Node node = previousNode.right;
+			if(node.hasLeft() && node.hasRight()) {
+				Node parent = node.left;
+				Node successor = parent.right;
+				if(successor == null) {
+					previousNode.left = node.left;
+				}
+				while(successor.hasRight()) {
+					parent = successor;
+					successor = successor.right;
+				}
+				parent.right = successor.left;
+				previousNode.right = successor;
+			} else if(node.hasLeft()) {
+				previousNode.right = node.left;
+			} else {
+				previousNode.right = node.right;
+			}
+		}
+		
+		return true;
+	}
+	
 	public void printTree() {
 		if(this.root == null) {
 			return;
