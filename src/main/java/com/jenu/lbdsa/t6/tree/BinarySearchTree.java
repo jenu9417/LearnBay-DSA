@@ -1,8 +1,32 @@
 package com.jenu.lbdsa.t6.tree;
 
+/**
+ * 
+ * Binary Search Tree
+ * ------------------
+ * 
+ * Binary Search Tree or BST is a very usefull datastructure. Basically it is a binary tree which follows the rule
+ * 			"left" < "root" < "right" 
+ * Hence it is very easy to search elements in a BST, due to the above rule. A bruteforce approach will take O(N),
+ * where as BST reduces this to O(LogN), assuming its balanced binary tree.
+ * 
+ * Time Complexity:
+ * ----------------
+ * Insert :  O(LogN)
+ * Find   :  O(LogN)
+ * Delete :  O(LogN)
+ *
+ *
+ * @author Janardhanan V S
+ *
+ */
 public class BinarySearchTree {
 
 	private Node root;
+	
+	public Node getRoot() {
+		return this.root;
+	}
 	
 	public void insert(int data) {
 		insertRecursive(data, this.root, this.root);
@@ -80,6 +104,14 @@ public class BinarySearchTree {
 			this.data = data;
 			this.left = left;
 			this.right = right;
+		}
+		
+		public boolean hasLeft() {
+			return (this.left != null);
+		}
+		
+		public boolean hasRight() {
+			return (this.right != null);
 		}
 	}
 	
