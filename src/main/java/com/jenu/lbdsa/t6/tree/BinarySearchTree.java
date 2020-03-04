@@ -198,6 +198,39 @@ public class BinarySearchTree {
 		btree.insert(5);
 		btree.insert(7);
 		
+		Node node = btree.findIterative(4, btree.root);
+		System.out.println("Found 4 Iterative : " + (node != null));
+		
+		node = btree.findIterative(10, btree.root);
+		System.out.println("Found 10 Iterative : " + (node != null));
+		
+		node = btree.findRecursive(7, btree.root);
+		System.out.println("Found 7 Recursive : " + (node != null));
+		
+		boolean deleted = btree.deleteIterative(7);
+		System.out.println("Deleted 7 : " + deleted);
+		
+		node = btree.findRecursive(7, btree.root);
+		System.out.println("Found 7 Recursive : " + (node != null));
+				
+		node = btree.findRecursive(6, btree.root);
+		System.out.println("Found 6 Recursive : " + (node != null));
+		
+		deleted = btree.deleteIterative(6);
+		System.out.println("Deleted 6 : " + deleted);
+		
+		node = btree.findRecursive(6, btree.root);
+		System.out.println("Found 6 Recursive : " + (node != null));
+		
+		node = btree.findIterative(3, btree.root);
+		System.out.println("Found 3 Iterative : " + (node != null));
+		
+		deleted = btree.deleteIterative(3);
+		System.out.println("Deleted 3 : " + deleted);
+		
+		node = btree.findIterative(3, btree.root);
+		System.out.println("Found 3 Iterative : " + (node != null));
+		
 		System.out.println("Current Height : " + btree.height());
 	}
 	
