@@ -167,12 +167,12 @@ public class MyLinkedList {
 
 	public void print() {
 		Node currentNode = head;
-		System.out.print("Linked List [\t");
+		System.out.print("Linked List  :  [ \t");
 		while(currentNode != null) {
 			System.out.print(currentNode.getData() + "\t");
 			currentNode = currentNode.getNext();
 		}
-		System.out.println("]");
+		System.out.println(" ]");
 	}
 	
 	public static void main(String[] args) {
