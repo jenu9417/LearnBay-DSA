@@ -21,7 +21,7 @@ import java.util.PriorityQueue;
  * @author Janardhanan V S
  *
  */
-public class HuffmanCoding {
+public class HuffmanEncoding {
 	
 	static Map<Character, String> huffmanCoding(Map<Character, Integer> freqMap) {
 		final Map<Character, String> resultMap = new HashMap<>();
