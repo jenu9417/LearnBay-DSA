@@ -16,7 +16,7 @@ import java.util.PriorityQueue;
  * 
  * 
  * Time  : O(NlogN) [PriorityQueue Operations] +
- *         O(NlogN) [DFS]
+ *         O(2^N-1) [DFS]
  *         
  * @author Janardhanan V S
  *
