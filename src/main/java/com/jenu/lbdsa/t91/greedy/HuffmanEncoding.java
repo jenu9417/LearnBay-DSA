@@ -16,7 +16,7 @@ import java.util.PriorityQueue;
  * 
  * 
  * Time  : O(NlogN) [PriorityQueue Operations] +
- *         O(2^N-1) [DFS]
+ *         O(2^Log(N)-1) [DFS] - Since we have N elements at the root level
  *         
  * @author Janardhanan V S
  *
