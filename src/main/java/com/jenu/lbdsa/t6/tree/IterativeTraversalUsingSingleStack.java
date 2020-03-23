@@ -42,12 +42,12 @@ import com.jenu.lbdsa.t6.tree.BinarySearchTree.Node;
 public class IterativeTraversalUsingSingleStack {
 	
 	static List<Integer> preOrderTraversal(BinarySearchTree btree) {
-		final List<Integer> inorderList = new ArrayList<>();
+		final List<Integer> preOrderList = new ArrayList<>();
 		final Stack<Node> stack = new Stack<>();
 		Node node = btree.getRoot();
 		
 		while(node != null) {
-			inorderList.add(node.data);
+			preOrderList.add(node.data);
 			stack.add(node);
 			if(node.hasLeft()) {
 				node = node.left;
@@ -65,7 +65,26 @@ public class IterativeTraversalUsingSingleStack {
 			}
 		}
 		
-		return inorderList;
+		return preOrderList;
+	}
+	
+	static List<Integer> preOrderSimplified(BinarySearchTree tree) {
+		List<Integer> preOrderList = new ArrayList<>();
+		Stack<Node> rootStack = new Stack<>();
+		rootStack.add(tree.getRoot());
+		
+		while(!rootStack.isEmpty()) {
+			Node node = rootStack.pop();
+			preOrderList.add(node.data);
+			if(node.hasRight()) {
+				rootStack.add(node.right);
+			}
+			if(node.hasLeft()) {
+				rootStack.add(node.left);
+			}
+		}
+
+		return preOrderList;
 	}
 	
 	static List<Integer> inOrderTraversal(BinarySearchTree btree) {
@@ -96,7 +115,7 @@ public class IterativeTraversalUsingSingleStack {
 	}
 	
 	static List<Integer> postOrderTraversal(BinarySearchTree btree) {
-		final List<Integer> inorderList = new ArrayList<>();
+		final List<Integer> postOrderList = new ArrayList<>();
 		final Stack<Node> stack = new Stack<>();
 		
 		Node node = btree.getRoot();
@@ -120,11 +139,11 @@ public class IterativeTraversalUsingSingleStack {
 				}
 				stack.pop();
 				prevNode = root;
-				inorderList.add(root.data);
+				postOrderList.add(root.data);
 			}
 		}
 		
-		return inorderList;
+		return postOrderList;
 	}
 	
 	public static void main(String[] args) {
