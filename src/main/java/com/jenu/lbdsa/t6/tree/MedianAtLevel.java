@@ -10,7 +10,6 @@ import java.util.stream.Collectors;
 import com.jenu.lbdsa.t6.tree.BinarySearchTree.Node;
 
 /**
- * 
  * MedianAtLevel
  * -------------
  * 
@@ -18,7 +17,6 @@ import com.jenu.lbdsa.t6.tree.BinarySearchTree.Node;
  * Mean is defined as the middle value when we place the elements in sorted order.
  * When there are even number of elements, then median is defined as the mean of
  * middle two elements.
- * 
  * 
  * Time  : O(N)
  *
