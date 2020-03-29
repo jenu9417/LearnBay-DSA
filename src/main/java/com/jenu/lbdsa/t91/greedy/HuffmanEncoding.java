@@ -15,8 +15,10 @@ import java.util.PriorityQueue;
  * This algorithm makes use of variable length code, formed by constructing a tree using the frequency of characters.
  * 
  * 
- * Time  : O(NlogN) [PriorityQueue Operations] +
- *         O(2^Log(N)-1) [DFS] - Since we have N elements at the root level
+ * Time  : O(NlogN)
+ * 
+ * O((2*N-1)*logN) [PriorityQueue Operations] +
+ * O(NlogN) [DFS] - Since we have N elements at the root level
  *         
  * @author Janardhanan V S
  *
@@ -80,12 +82,12 @@ public class HuffmanEncoding {
 
 	public static void main(String[] args) {
 		final Map<Character, Integer> freqMap = new HashMap<>();
-		freqMap.put('A', 3);
-		freqMap.put('B', 1);
-		freqMap.put('C', 5);
-		freqMap.put('D', 22);
-		freqMap.put('E', 20);
-		freqMap.put('F', 9);
+		freqMap.put('A', 5);
+		freqMap.put('B', 9);
+		freqMap.put('C', 12);
+		freqMap.put('D', 13);
+		freqMap.put('E', 16);
+		freqMap.put('F', 45);
 		
 		System.out.println("Huffman Encoding : ");
 		final Map<Character, String> resultMap = huffmanCoding(freqMap);
