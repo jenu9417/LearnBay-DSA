@@ -6,7 +6,6 @@ import java.util.Map;
 import java.util.PriorityQueue;
 
 /**
- * 
  * +------------------+
  * | Huffman Encoding |
  * +------------------+
@@ -19,6 +18,7 @@ import java.util.PriorityQueue;
  * 
  * O((2*N-1)*logN) [PriorityQueue Operations] +
  * O(NlogN) [DFS] - Since we have N elements at the root level
+ *         
  *         
  * @author Janardhanan V S
  *
