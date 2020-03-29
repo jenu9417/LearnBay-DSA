@@ -45,19 +45,9 @@ public class HuffmanEncoding {
 			final Node node2 = priorityQueue.poll();
 			
 			final Node combined = new Node(node1.getValue() + node2.getValue());
+			combined.setLeft(node1);
+			combined.setRight(node2);
 
-			/** Check to avoid swapping of left and right subtrees. */
-			/** Combined nodes will have the character of right most node. */
-			if(freqMap.get(node1.getCharacter()) < freqMap.get(node2.getCharacter())) {
-				combined.setLeft(node1);
-				combined.setRight(node2);
-				combined.setCharacter(node2.getCharacter());
-			} else {
-				combined.setLeft(node2);
-				combined.setRight(node1);
-				combined.setCharacter(node1.getCharacter());
-			}
-			
 			priorityQueue.add(combined);
 		}
 		
